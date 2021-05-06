@@ -31,7 +31,21 @@
 .advisories:last-child {
   margin-right: 50px;
 }
+.advisories > a > h2 {
+  text-align: center;
+  color: black;
+  font-family: sans-serif;
+  padding: 15px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.advisories > a {
+  text-decoration: none;
+}
 .advisories > h2 {
+  text-decoration: none;
+  color: black;
   font-family: sans-serif;
   padding: 15px;
   font-size: 24px;

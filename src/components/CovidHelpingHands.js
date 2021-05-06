@@ -12,12 +12,16 @@ function CovidHelpingHands() {
       </div>
       <div className='covid-19_box'>
         <div className='advisories'>
-          <h2>Advisories</h2>
-          <img src={advisories_img} alt='advisories img' />
+          <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public#:~:text=Protect%20yourself%20and%20others%20from,a%20bent%20elbow%20or%20tissue.'>
+            <h2>Advisories</h2>
+            <img src={advisories_img} alt='advisories img' />
+          </a>
         </div>
         <div className='advisories'>
-          <h2>Vaccine</h2>
-          <img src={vaccine_img} alt='vaccine img' />
+          <a href='https://www.cowin.gov.in/'>
+            <h2>Vaccine</h2>
+            <img src={vaccine_img} alt='vaccine img' />
+          </a>
         </div>
         <div className='advisories'>
           <h2>Consult Doctor</h2>
