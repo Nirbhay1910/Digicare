@@ -1,0 +1,47 @@
+.navbar {
+  padding: 15px 20px;
+  display: flex;
+  width: 100vw;
+  height: 80px;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 100;
+  top: 0;
+  box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+.logo {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 20px;
+}
+.logo-title > h1 {
+  font-family: sans-serif;
+  color: #2575ba;
+  font-weight: 800;
+  font-size: larger;
+  letter-spacing: 1px;
+  font-style: italic;
+  padding-top: 20px;
+}
+
+.navs {
+  position: absolute;
+  right: 50px;
+  width: 65vw;
+}
+.nav {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.nav-option {
+  font-size: 20px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.nav-option:hover {
+  color: red;
+  font-size: larger;
+}
