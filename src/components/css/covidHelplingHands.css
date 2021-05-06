@@ -1,0 +1,45 @@
+.covidHelpingHands {
+  background-color: #2885c31a;
+  padding: 30px;
+}
+.covid_title {
+  font-family: var(--font-family-roboto-bold);
+  font-size: 200%;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.covid-19_box {
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+.advisories:hover {
+  transform: scale(1.1);
+}
+.advisories {
+  display: grid;
+  place-items: center;
+  background-color: #cbd6e5;
+  box-shadow: 0px 4px 4px #00000040;
+  margin: 30px;
+  cursor: pointer;
+}
+.advisories:first-child {
+  margin-left: 50px;
+}
+.advisories:last-child {
+  margin-right: 50px;
+}
+.advisories > h2 {
+  font-family: sans-serif;
+  padding: 15px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.advisories > img {
+  object-fit: cover;
+  height: 250px;
+}
