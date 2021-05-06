@@ -1,0 +1,29 @@
+.chatSidebar {
+  display: flex;
+  flex: 0.35;
+  flex-direction: column;
+}
+
+.chatSidebar__header {
+  display: flex;
+  padding: 20px;
+  border-right: 1px solid lightgray;
+  justify-content: space-between;
+}
+
+.chatSidebar__headerRight {
+  min-width: 10vw;
+  font-size: larger;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.chatSidebar__headerRight > .MuiSvgIcon-root {
+  margin-right: 2vw;
+  font-size: 24px !important;
+}
+.chatSidebar__chats {
+  flex: 1;
+  overflow: scroll;
+  background-color: white;
+}
