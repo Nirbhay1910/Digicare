@@ -1,6 +1,9 @@
 import React from 'react';
+import AboutUs from './AboutUs';
 import CovidHelpingHands from './CovidHelpingHands';
+import Footer from './Footer';
 import HeroSection from './HeroSection';
+import MeetSpecialists from './MeetSpecialists';
 import Navbar from './Navbar';
 
 function App() {
@@ -9,6 +12,9 @@ function App() {
       <Navbar />
       <HeroSection />
       <CovidHelpingHands />
+      <MeetSpecialists />
+      <AboutUs />
+      <Footer />
     </div>
   );
 }
