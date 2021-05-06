@@ -10,7 +10,7 @@ function HeroSection() {
         <p id="hero-main">Don't Spend thousands on doctor consultation</p>
         <p id="hero-sub">
           our Passionate and verified doctors will do it for free or for 1% of
-          the cost
+          the cost 
         </p>
         <div>
           <Button id="button" variant="contained" color="primary">
