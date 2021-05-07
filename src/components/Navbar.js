@@ -22,7 +22,7 @@ function Navbar() {
           </Link>
           <h2 className='nav-option'>Doctor Consultation</h2>
           <Link to='/talkWithStrangers'>
-            <h2 className='nav-option'>Talk with Others</h2>
+            <h2 className='nav-option'>Chat with Others</h2>
           </Link>
           {!user ? (
             <Link to='/signin'>

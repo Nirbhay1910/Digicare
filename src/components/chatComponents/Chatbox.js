@@ -3,8 +3,7 @@ import Chat from './Chat';
 import ChatSidebar from './ChatSidebar';
 import '../css/chatbox.css';
 import Footer from '../Footer';
-import Login from '../Login';
-import { Redirect } from 'react-router';
+import { Redirect, Route, Router, Switch } from 'react-router';
 import { useStateValue } from '../../StateProvider';
 function Chatbox() {
   const [{ user }, dispatch] = useStateValue();
@@ -14,7 +13,11 @@ function Chatbox() {
         <div className='chatbox'>
           <div className='chatbox_body'>
             <ChatSidebar />
-            <Chat />
+            <Switch>
+              <Route path='/talkWithStrangers/rooms/:roomId'>
+                <Chat />
+              </Route>
+            </Switch>
           </div>
         </div>
         <Footer />

@@ -24,8 +24,8 @@ function App() {
           </Route>
           <Route path='/'>
             <HeroSection />
-            <CovidHelpingHands />
             <MeetSpecialists />
+            <CovidHelpingHands />
             <AboutUs />
             <Footer />
           </Route>
