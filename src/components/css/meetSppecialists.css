@@ -10,7 +10,7 @@
 }
 .specialists_box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   transition: all 0.2s ease;
 }
 .specialists:hover {
