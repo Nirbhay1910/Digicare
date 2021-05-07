@@ -7,6 +7,7 @@ import Footer from './Footer';
 import HeroSection from './HeroSection';
 import MeetSpecialists from './MeetSpecialists';
 import Navbar from './Navbar';
+import Login from './Login';
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         <Switch>
           <Route path='/talkWithStrangers'>
             <Chatbox />
+          </Route>
+          <Route path='/signin'>
+            <Login />
+            <Footer />
           </Route>
           <Route path='/'>
             <HeroSection />
