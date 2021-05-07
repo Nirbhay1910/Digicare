@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './css/footer.css';
 import logo from '../images/logo.png';
 import 'font-awesome/css/font-awesome.min.css';
@@ -13,13 +14,13 @@ function Footer() {
         </div>
 
         <p class='footer-links'>
-          <a href='/' class='link-1'>
+          <Link to='/' class='link-1'>
             Home
-          </a>
+          </Link>
 
-          <a href='#'>Doctor Consultation</a>
+          <Link to='/consultDoctors'> Doctor Consultation</Link>
 
-          <a href='#'>Talk with others</a>
+          <Link to='/talkWithStrangers'> Talk with others</Link>
         </p>
 
         <p class='footer-company-name'>© All rights Reserved. DIGICARE 2021</p>

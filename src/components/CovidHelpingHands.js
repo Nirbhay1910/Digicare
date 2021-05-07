@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './css/covidHelplingHands.css';
 import vaccine_img from '../images/vaccine_img.png';
 import advisories_img from '../images/advisories_image.png';
@@ -23,10 +24,12 @@ function CovidHelpingHands() {
             <img src={vaccine_img} alt='vaccine img' />
           </a>
         </div>
-        <div className='advisories'>
-          <h2>Consult Doctor</h2>
-          <img src={consult_doc_img} alt='consult doc img' />
-        </div>
+        <Link to='/consultDoctors'>
+          <div className='advisories'>
+            <h2>Consult Doctor</h2>
+            <img src={consult_doc_img} alt='consult doc img' />
+          </div>
+        </Link>
       </div>
     </div>
   );
