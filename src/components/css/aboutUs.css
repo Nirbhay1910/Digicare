@@ -1,24 +1,29 @@
-.about{
-    display:flex;
-    background-color: #2885c31a;
-    padding: 20px;
+.about {
+  display: flex;
+  background-color: #2885c31a;
+  padding: 20px;
 }
 
-.left{
-    padding: 10px;
+.left {
+  padding: 40px;
+}
+.left > img {
+  height: 200px;
+}
+.right {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
 }
 
-.right{
-    display: flex;
-    padding:10px;
-    flex-direction: column;
+.right-main {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 
-.right-main{
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.right-sub{
-    font-size:20px;
+.right-sub {
+  line-height: 1.3;
+  font-size: 20px;
 }
