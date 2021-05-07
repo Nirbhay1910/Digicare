@@ -21,11 +21,7 @@ function Footer() {
 
           <a href="#">Talk with others</a>
 
-          {/* <a href="#">About</a>
-
-          <a href="#">Faq</a>
-
-          <a href="#">Contact</a> */}
+          
         </p>
 
         <p class="footer-company-name">© All rights Reserved. DIGICARE 2021</p>
