@@ -1,8 +1,10 @@
 export const initialState = {
   user: null,
+  doctors: null,
 };
 export const actionTypes = {
   SET_USER: 'SET_USER',
+  ADD_DOCTORS: 'ADD_DOCTORS',
 };
 const reducer = (state, action) => {
   console.log(action);
@@ -11,6 +13,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.user,
+      };
+    case actionTypes.ADD_DOCTORS:
+      return {
+        ...state,
+        doctors: action.doctors,
       };
     default:
       return state;

@@ -20,7 +20,9 @@ function Navbar() {
           <Link to='/'>
             <h2 className='nav-option'>Home</h2>
           </Link>
-          <h2 className='nav-option'>Doctor Consultation</h2>
+          <Link to='/consultDoctors'>
+            <h2 className='nav-option'>Doctor Consultation</h2>
+          </Link>
           <Link to='/talkWithStrangers'>
             <h2 className='nav-option'>Chat with Others</h2>
           </Link>

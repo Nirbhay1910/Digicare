@@ -1,0 +1,41 @@
+.consultDoctor {
+  background-color: #2885c31a;
+}
+.consultDoc__hero {
+  margin-top: 10px;
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+  min-height: 400px;
+}
+.consultDoc__hero > img {
+  height: 55vh;
+  width: 45vw;
+}
+.consultDoc__hero > form {
+  font-size: 40px;
+  margin: 50px;
+  font-weight: 700;
+}
+.consultDoc__hero > form > input {
+  margin: 30px 0 0 0;
+  border: solid 1px rgb(216, 213, 213);
+  border-radius: 20px;
+  box-shadow: 0px 4px 5px #00000050;
+  padding: 10px 10px 10px 15px;
+  width: 25vw;
+}
+.consultDoc__hero > form > input:focus {
+  outline: none;
+}
+.consultDoc__hero > form > button {
+  display: none;
+}
+.docCards {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}

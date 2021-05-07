@@ -1,0 +1,49 @@
+.docCard {
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.docCard:hover {
+  transform: scale(1.1);
+}
+.specialists {
+  background-color: #cbd6e5;
+  padding: 10px;
+  margin: 30px;
+  box-shadow: 0px 4px 4px #00000040;
+  cursor: pointer;
+}
+
+.specialists > .doc_info > h2 {
+  text-align: left;
+  color: black;
+  font-family: sans-serif;
+  font-size: 1em;
+  letter-spacing: 0;
+  font-weight: 500;
+  padding: 10px;
+}
+.specialists > img {
+  object-fit: cover;
+  height: 250px;
+  width: 250px;
+}
+
+.see_all {
+  margin: 10px;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+.see_all > h2 {
+  border-radius: 20px;
+  background-color: #2575ba;
+  color: white;
+  border: none;
+  padding: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+.see_all > h2:hover {
+  background-color: #2575ba;
+  transform: scale(1.1);
+}

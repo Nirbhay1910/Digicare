@@ -9,6 +9,7 @@ import MeetSpecialists from './MeetSpecialists';
 import Navbar from './Navbar';
 import Login from './Login';
 import Account from './Account';
+import ConsultDoctor from './ConsultDoctor';
 
 function App() {
   return (
@@ -25,6 +26,13 @@ function App() {
           </Route>
           <Route path='/myAccount'>
             <Account />
+          </Route>
+          <Route path='/consultDoctors/:specialityRequired'>
+            <ConsultDoctor />
+          </Route>
+          <Route path='/consultDoctors'>
+            <ConsultDoctor />
+            <Footer />
           </Route>
           <Route path='/'>
             <HeroSection />
