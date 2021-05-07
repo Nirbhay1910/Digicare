@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/chatSidebar.css';
 import { Avatar } from '@material-ui/core';
 import SidebarChat from './SidebarChat';
+import { useStateValue } from '../../StateProvider';
+import db from '../../firebase';
 function ChatSidebar() {
+  const [rooms, setRooms] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
+  useEffect(() => {
+    db.collection('rooms').onSnapshot((snapshot) =>
+      setRooms(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+  }, []);
   return (
     <div className='chatSidebar'>
       <div className='chatSidebar__header'>
-        <Avatar />
+        <Avatar src={user.photoURL} />
         <div className='chatSidebar__headerRight'>
-          <h2>Welcome Rohan</h2>
+          <h2>{user.name}</h2>
         </div>
       </div>
 
       <div className='chatSidebar__chats'>
         <SidebarChat addNewChat />
-        <SidebarChat name='Cricket' />
-        <SidebarChat name='Politics' />
-        <SidebarChat name='Covid-resources' />
-        <SidebarChat name='Relationships' />
+        {rooms.map((room) => (
+          <SidebarChat key={room.id} id={room.id} name={room.data.name} />
+        ))}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/chat.css';
 import { Avatar, IconButton } from '@material-ui/core';
+import firebase from 'firebase';
 import {
   AttachFile,
   InsertEmoticon,
@@ -9,14 +10,63 @@ import {
   SearchOutlined,
 } from '@material-ui/icons';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
+import { useParams } from 'react-router';
+import { useStateValue } from '../../StateProvider';
+import db from '../../firebase';
 
 function Chat() {
+  const [input, setInput] = useState('');
+  const { roomId } = useParams();
+  const [roomName, setRoomName] = useState('');
+  const [seed, setSeed] = useState('');
+  const [messages, setMessages] = useState([]);
+
+  const [{ user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    setSeed(Math.floor(Math.random() * 5000));
+  }, []);
+
+  useEffect(() => {
+    if (roomId) {
+      db.collection('rooms')
+        .doc(roomId)
+        .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+
+      db.collection('rooms')
+        .doc(roomId)
+        .collection('messages')
+        .orderBy('timestamp', 'asc')
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
+  }, [roomId]);
+  console.log(messages);
+  const sendMessage = (e) => {
+    e.preventDefault();
+    db.collection('rooms').doc(roomId).collection('messages').add({
+      name: user.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      message: input,
+    });
+    setInput('');
+  };
   return (
     <div className='chat'>
       <div className='chat__header'>
-        <Avatar />
+        <Avatar
+          src={`https://avatars.dicebear.com/api/human/${seed}\
+          )}.svg`}
+        />
         <div className='chat__headerInfo'>
-          <h3>Cricket</h3>
+          <h3>{roomName}</h3>
+          <p>
+            Last seen at{' '}
+            {new Date(
+              messages[messages.length - 1]?.timestamp?.toDate()
+            ).toUTCString()}
+          </p>
         </div>
         <div className='chat__headerRight'>
           <IconButton>
@@ -31,25 +81,34 @@ function Chat() {
         </div>
       </div>
       <div className='chat__body'>
-        <p className='chat__message'>
-          <span className='chat__name'>Rohan</span>
-          Hi guys! how are you?
-          <span className='chat__timestamp'>9:16pm</span>
-        </p>
-        <p className='chat__message chat__receiver'>
-          <span className='chat__name '>Rohan</span>
-          Hi! I am fine. What about you?
-          <span className='chat__timestamp'>9:18pm</span>
-        </p>
+        {messages.map((message) => (
+          <p
+            className={`chat__message ${
+              message.name === user.displayName && 'chat__receiver'
+            }`}
+          >
+            <span className='chat__name'>{message.name}</span>
+            {message.message}
+            <span className='chat__timestamp'>
+              {new Date(message.timestamp?.toDate()).toUTCString()}
+            </span>
+          </p>
+        ))}
       </div>
-      <civ className='chat__footer'>
+      <div className='chat__footer'>
         <InsertEmoticon />
         <form>
-          <input placeholder='type a message' />
-          <button type='submit'>Send a message</button>
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder='type a message'
+          />
+          <button type='submit' onClick={sendMessage}>
+            Send a message
+          </button>
         </form>
         <MicOutlined />
-      </civ>
+      </div>
     </div>
   );
 }
