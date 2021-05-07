@@ -22,7 +22,7 @@ function ChatSidebar() {
       <div className='chatSidebar__header'>
         <Avatar src={user.photoURL} />
         <div className='chatSidebar__headerRight'>
-          <h2>{user.name}</h2>
+          <h2>{user.displayName}</h2>
         </div>
       </div>
 

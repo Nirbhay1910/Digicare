@@ -10,6 +10,7 @@ import Navbar from './Navbar';
 import Login from './Login';
 import Account from './Account';
 import ConsultDoctor from './ConsultDoctor';
+import ConsultForm from './ConsultForm';
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
           </Route>
           <Route path='/consultDoctors'>
             <ConsultDoctor />
+            <Footer />
+          </Route>
+          <Route path='/consultForm'>
+            <ConsultForm />
             <Footer />
           </Route>
           <Route path='/'>
