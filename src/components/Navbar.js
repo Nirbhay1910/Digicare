@@ -29,10 +29,12 @@ function Navbar() {
               <h2 className='nav-option'>SignUp</h2>
             </Link>
           ) : (
-            <div className='nav-option'>
-              <Avatar className='avatar' src={user.photoURL} />
-              <h2>{user.displayName}</h2>
-            </div>
+            <Link to='/myAccount'>
+              <div className='nav-option'>
+                <Avatar className='avatar' src={user.photoURL} />
+                <h2>{user.displayName}</h2>
+              </div>
+            </Link>
           )}
         </div>
       </div>

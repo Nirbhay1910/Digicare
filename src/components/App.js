@@ -8,6 +8,7 @@ import HeroSection from './HeroSection';
 import MeetSpecialists from './MeetSpecialists';
 import Navbar from './Navbar';
 import Login from './Login';
+import Account from './Account';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Route path='/signin'>
             <Login />
             <Footer />
+          </Route>
+          <Route path='/myAccount'>
+            <Account />
           </Route>
           <Route path='/'>
             <HeroSection />
