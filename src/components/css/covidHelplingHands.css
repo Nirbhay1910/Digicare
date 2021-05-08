@@ -5,6 +5,7 @@
 .covid_title {
   font-family: var(--font-family-roboto-bold);
   font-size: 200%;
+  color:#2f4f4f;
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;

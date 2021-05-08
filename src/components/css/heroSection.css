@@ -1,52 +1,61 @@
 .hero {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 30px;
 }
 
 .right {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: all 0.2s ease;
 }
-
+#tagline {
+	justify-content: center;
+	margin: 10px;
+	color: #2f4f4f;
+	font-family: var(--font-family-roboto-bold);
+	font-size: 200%;
+	font-weight: 700;
+}
 #hero-main {
-  justify-content: center;
-  margin: 10px;
-  font-family: var(--font-family-roboto-bold);
-  font-size: 200%;
-  font-weight: 700;
+	justify-content: center;
+	margin: 10px;
+	color: #2f4f4f;
+	font-family: var(--font-family-roboto-bold);
+	font-size: 200%;
+	font-weight: 500;
 }
 
 #hero-sub {
-  font-size: 24px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  margin: 10px;
+	font-size: 22px;
+	color: #2f4f4f;
+	letter-spacing: 1px;
+	font-weight: 500;
+	margin: 10px;
 }
 
 #button {
-  background-color: #2575ba;
-  color: white;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 20px;
+	background-color: #2575ba;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 20px;
 }
 
 #button:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 @media (max-width: 750px) {
-  .hero {
-    flex-direction: column-reverse;
-    justify-content: center;
-  }
+	.hero {
+		flex-direction: column-reverse;
+		justify-content: center;
+	}
 }
