@@ -1,3 +1,7 @@
+# DIGICARE
+
+### where Healing, Teaching, Discovery come together.
+
 ### `Description`
 
 #### People suffering from any problem can use our website without infecting and depending on others as it is completely virtual which also saves their time.
