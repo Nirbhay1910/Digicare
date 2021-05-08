@@ -16,39 +16,45 @@ function Account() {
     return (
       <div className="Account">
         <div className="medicians">
-          <p className="text">Medicians for you</p>
+          <p className="text">Medicines Prescribed</p>
           <div>
-            <table border="5" cellPadding="2">
-              <tr>
-                <td>Medicians</td>
-                <td>Dosage</td>
-              </tr>
-              <tr>
-                <td>ZOLO 650mg</td>
-                <td>twice a day</td>
-              </tr>
-              <tr>
-                <td>Azithromycin</td>
-                <td>twice a day</td>
-              </tr>
-              <tr>
-                <td>Rabeprazole sodium 20mg</td>
-                <td>once a day</td>
-              </tr>
-              <tr>
-                <td>zinc sulphate dispersible 20mg</td>
-                <td>once a day</td>
-              </tr>
-              <tr>
-                <td>Vitamin C tab</td>
-                <td>twice a day</td>
-              </tr>
+
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Medicines</th>
+                  <th>Dosage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ZOLO 650mg</td>
+                  <td>twice a day</td>
+                </tr>
+                <tr class="active-row">
+                  <td>Dispersible 20mg</td>
+                  <td>once a day</td>
+                </tr>
+                <tr>
+                  <td>Azithromycin</td>
+                  <td>once a day</td>
+                </tr>
+                <tr class="active-row">
+                  <td>Rabeprazole sodium 20mg</td>
+                  <td>twice a day</td>
+                </tr>
+                <tr>
+                  <td>Vitamin C tab</td>
+                  <td>once a day</td>
+                </tr>
+
+              </tbody>
             </table>
           </div>
         </div>
         <div classname="reports">
-          <div>
-            <p className="text">Your old Reports</p>
+          <div className="cen">
+            <p className="text" >Reports</p>
           </div>
           <div>
             <img src={breport} />
