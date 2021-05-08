@@ -5,6 +5,7 @@
 .meetSpecialists_title {
   font-family: var(--font-family-roboto-bold);
   font-size: 200%;
+  color:#2f4f4f;
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
@@ -31,7 +32,7 @@
   margin-right: 50px;
 }
 .specialists > a > .doc_info > h2 {
-  text-align: left;
+  text-align: center;
   color: black;
   font-family: sans-serif;
   font-size: 1em;

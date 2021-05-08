@@ -8,10 +8,11 @@ function HeroSection() {
   return (
     <div className='hero'>
       <div className='left'>
+      <p id='tagline'>DIGICARE where Healing, Teaching, Discovery come together.</p>
         <p id='hero-main'>Don't Spend thousands on doctor consultation</p>
         <p id='hero-sub'>
-          our Passionate and verified doctors will do it for free or for 1% of
-          the cost
+          our passionate and verified doctors will do it for free or for 1% of
+          the cost.
         </p>
         <Link to='/consultDoctors'>
           <div>
