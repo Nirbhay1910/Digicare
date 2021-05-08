@@ -31,7 +31,9 @@ function ConsultDoctor() {
     <div className='consultDoctor'>
       <div className='consultDoc__hero'>
         <form>
-          <h1>Search Doctors by their speciality</h1>
+          <h1 className='consultDoc__hero__title'>
+            Search Doctors by their speciality
+          </h1>
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}

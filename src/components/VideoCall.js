@@ -106,8 +106,10 @@ function VideoCall() {
       <>
         <h1 className='video_instruction_heading'>
           Copy your id and share it with your friend or paste the id given by
-          your friend to the box and click on call button.{' '}
+          your friend to the box and click on call button. <br></br> <br></br>If
+          you are not able to view your video try refreshing the page.
         </h1>
+
         <div className='container'>
           <div className='video-container'>
             <div className='video'>

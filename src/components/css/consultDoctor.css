@@ -39,3 +39,6 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.consultDoc__hero__title {
+  color: #2f4f4f;
+}
