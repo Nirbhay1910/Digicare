@@ -78,3 +78,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 #### react
 #### react-router-dom
 #### web-vitals
+#### simple-peer
+#### socket.io-client
+
+### `Reference`
+
+#### https://www.youtube.com/watch?v=pUxrDcITyjg
+#### https://www.youtube.com/watch?v=gnM3Ld6_upE
