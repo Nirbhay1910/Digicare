@@ -1,16 +1,29 @@
+# DIGICARE
+
+### where Healing, Teaching, Discovery come together.
+
 ### `Description`
 
-#### A victim suffering from any problem can use our website without infecting and depending on others as it is completely virtual which also saves their time.
+#### People suffering from any problem can use our website without infecting and depending on others as it is completely virtual which also saves their time.
 #### The Specialists will be available to provide their proper guidelines to the victim suffering from any problem in Covid-19 and even after the covid period, people can consult top-notch doctors even from foreign as there will be no geographical restrictions.
-#### In case of emergencies, we will have our doctors 24hrs ready so that people can get advice
-within no time.
+#### In case of emergencies, we will have our doctors 24hrs ready so that people can get advice within no time.
+
+
+### `Future Goals`
+
+#### Virtual Yoga Sessions
+#### Virtual Cardio Sessions
+#### NGO collabration for covid help
+#### No geographical restrictions between doctors and patient
 
 
 ### `Features`
 
 #### Google authentication
-#### Realtime Video Call
-#### Realtime Chat
+#### Real-time Video Call
+#### Real-time Chat
+#### Search Doctor by specialization
+#### Virtual Treatment
 
 
 ### `Reference`
