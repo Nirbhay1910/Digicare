@@ -1,0 +1,29 @@
+.Account{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.medicians{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding:30px;
+}
+
+.reports{
+    padding: 30px;
+    margin:30px;
+}
+
+.text{
+    font-size: 40px;
+    padding:10px;
+    align-items: center;
+}
+
+.disclaimer{
+    color: red;
+    padding: 30px;
+}
