@@ -1,3 +1,37 @@
+### `Description`
+
+#### A victim suffering from any problem can use our website without infecting and depending on others as it is completely virtual which also saves their time.
+#### The Specialists will be available to provide their proper guidelines to the victim suffering from any problem in Covid-19 and even after the covid period, people can consult top-notch doctors even from foreign as there will be no geographical restrictions.
+#### In case of emergencies, we will have our doctors 24hrs ready so that people can get advice
+within no time.
+
+
+### `Features`
+
+#### Google authentication
+#### Realtime Video Call
+#### Realtime Chat
+
+
+### `Reference`
+
+#### https://www.youtube.com/watch?v=pUxrDcITyjg
+#### https://www.youtube.com/watch?v=gnM3Ld6_upE
+
+
+### `Dependencies`
+
+#### @material-ui
+#### firebase
+#### WebRTC
+#### font-awesome
+#### react
+#### react-router-dom
+#### web-vitals
+#### simple-peer
+#### socket.io-client
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,19 +103,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### `Dependencies`
 
-#### @material-ui
-#### firebase
-#### WebRTC
-#### font-awesome
-#### react
-#### react-router-dom
-#### web-vitals
-#### simple-peer
-#### socket.io-client
-
-### `Reference`
-
-#### https://www.youtube.com/watch?v=pUxrDcITyjg
-#### https://www.youtube.com/watch?v=gnM3Ld6_upE
