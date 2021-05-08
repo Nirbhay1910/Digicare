@@ -17,26 +17,31 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar />
         <Switch>
           <Route path='/talkWithStrangers'>
+            <Navbar />
             <Chatbox />
           </Route>
           <Route path='/signin'>
+            <Navbar />
             <Login />
             <Footer />
           </Route>
           <Route path='/myAccount'>
+            <Navbar />
             <Account />
           </Route>
           <Route path='/consultDoctors/:specialityRequired'>
+            <Navbar />
             <ConsultDoctor />
           </Route>
           <Route path='/consultDoctors'>
+            <Navbar />
             <ConsultDoctor />
             <Footer />
           </Route>
           <Route path='/consultForm'>
+            <Navbar />
             <ConsultForm />
             <Footer />
           </Route>
@@ -45,6 +50,7 @@ function App() {
           </Route>
 
           <Route path='/'>
+            <Navbar />
             <HeroSection />
             <MeetSpecialists />
             <CovidHelpingHands />

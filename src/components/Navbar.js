@@ -26,9 +26,9 @@ function Navbar() {
           <Link to='/talkWithStrangers'>
             <h2 className='nav-option'>Chat with Others</h2>
           </Link>
-          <Link to='/videoCall'>
+          <a target='__blank' href='/videoCall'>
             <h2 className='nav-option'>Video Call</h2>
-          </Link>
+          </a>
           {!user ? (
             <Link to='/signin'>
               <h2 className='nav-option'>SignUp</h2>

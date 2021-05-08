@@ -1,6 +1,9 @@
 .container {
   display: grid;
+  place-items: center;
   grid-template-columns: 7fr 3fr;
+  background-color: #2885c31a;
+  height: 100vh;
 }
 
 .myId {
@@ -18,7 +21,7 @@
     #c9d6ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  padding: 2rem;
+  padding: 4rem;
   display: grid;
   justify-content: center;
   align-content: center;

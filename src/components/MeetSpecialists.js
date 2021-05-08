@@ -12,16 +12,20 @@ function MeetSpecialists() {
       </div>
       <div className='specialists_box'>
         <div className='specialists'>
-          <img src={doct1} alt='doc img' />
-          <div className='doc_info'>
-            <h2>Covid Recovered Person</h2>
-          </div>
+          <a target='__blank' href='/videoCall'>
+            <img src={doct1} alt='doc img' />
+            <div className='doc_info'>
+              <h2>Covid Recovered Person</h2>
+            </div>
+          </a>
         </div>
         <div className='specialists'>
-          <img src={doct2} alt='doc img' />
-          <div className='doc_info'>
-            <h2>Stranger</h2>
-          </div>
+          <a target='__blank' href='/videoCall'>
+            <img src={doct2} alt='doc img' />
+            <div className='doc_info'>
+              <h2>Stranger</h2>
+            </div>
+          </a>
         </div>
       </div>
     </div>

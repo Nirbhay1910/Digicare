@@ -15,137 +15,121 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useHistory } from 'react-router';
 import Peer from 'simple-peer';
 import io from 'socket.io-client';
+import { useStateValue } from '../StateProvider';
 import './css/videoCall.css';
 
-const socket = io.connect('http://localhost:5000');
-class VideoCall extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      me: '',
-      stream: {},
-      receivingCall: false,
-      caller: '',
-      callerSignal: {},
-      idToCall: '',
-      callEnded: false,
-      name: '',
-    };
-    this.myVideo = createRef();
-    this.userVideo = createRef();
-    this.connectionRef = createRef();
-  }
+const socket = io.connect('https://digicare-server.herokuapp.com/');
+function VideoCall() {
+  const [me, setMe] = useState('');
+  const [stream, setStream] = useState();
+  const [receivingCall, setReceivingCall] = useState(false);
+  const [caller, setCaller] = useState('');
+  const [callerSignal, setCallerSignal] = useState();
+  const [callAccepted, setCallAccepted] = useState(false);
+  const [idToCall, setIdToCall] = useState('');
+  const [callEnded, setCallEnded] = useState(false);
+  const [name, setName] = useState('');
+  const myVideo = useRef();
+  const userVideo = useRef();
+  const connectionRef = useRef();
 
-  componentDidMount() {
+  useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
-        this.setState({
-          stream: stream,
-        });
-        this.myVideo.current.srcObject = stream;
+        setStream(stream);
+        if (myVideo.current) myVideo.current.srcObject = stream;
       });
 
     socket.on('me', (id) => {
-      this.setState({
-        me: id,
-      });
+      setMe(id);
     });
 
     socket.on('callUser', (data) => {
-      this.setState({
-        receivingCall: true,
-        caller: data.from,
-        name: data.name,
-        callerSignal: data.signal,
+      setReceivingCall(true);
+      setCaller(data.from);
+      setName(data.name);
+      setCallerSignal(data.signal);
+    });
+  }, []);
+
+  const callUser = (id) => {
+    const peer = new Peer({
+      initiator: true,
+      trickle: false,
+      stream: stream,
+    });
+    peer.on('signal', (data) => {
+      socket.emit('callUser', {
+        userToCall: id,
+        signalData: data,
+        from: me,
+        name: name,
       });
     });
-  }
-  render() {
-    const { stream, userVideo, connectionRef } = this.state;
-    const callUser = (id) => {
-      const peer = new Peer({
-        initiator: true,
-        trickle: false,
-        stream: this.state.stream,
-      });
-      peer.on('signal', (data) => {
-        socket.emit('callUser', {
-          userToCall: id,
-          signalData: data,
-          from: this.state.me,
-          name: this.state.name,
-        });
-      });
-      peer.on('stream', (stream) => {
-        userVideo.current.srcObject = stream;
-      });
-      socket.on('callAccepted', (signal) => {
-        this.setState({
-          callAccepted: true,
-        });
-        peer.signal(signal);
-      });
+    peer.on('stream', (stream) => {
+      userVideo.current.srcObject = stream;
+    });
+    socket.on('callAccepted', (signal) => {
+      setCallAccepted(true);
+      peer.signal(signal);
+    });
 
-      connectionRef.current = peer;
-    };
+    connectionRef.current = peer;
+  };
 
-    const answerCall = () => {
-      this.setState({
-        callAccepted: true,
-      });
-      const peer = new Peer({
-        initiator: false,
-        trickle: false,
-        stream: stream,
-      });
-      peer.on('signal', (data) => {
-        socket.emit('answerCall', { signal: data, to: this.state.caller });
-      });
-      peer.on('stream', (stream) => {
-        userVideo.current.srcObject = stream;
-      });
+  const answerCall = () => {
+    setCallAccepted(true);
+    const peer = new Peer({
+      initiator: false,
+      trickle: false,
+      stream: stream,
+    });
+    peer.on('signal', (data) => {
+      socket.emit('answerCall', { signal: data, to: caller });
+    });
+    peer.on('stream', (stream) => {
+      userVideo.current.srcObject = stream;
+    });
 
-      peer.signal(this.state.callerSignal);
-      connectionRef.current = peer;
-    };
+    peer.signal(callerSignal);
+    connectionRef.current = peer;
+  };
 
-    const leaveCall = () => {
-      this.setState({
-        callEnded: true,
-      });
-      connectionRef.current.destroy();
-    };
-    if (this.state.me) {
-      return (
-        <>
-          <h1 style={{ textAlign: 'center', color: '#fff' }}>Zoomish</h1>
-          <div className='container'>
-            <div className='video-container'>
-              <div className='video'>
-                {stream && (
-                  <video
-                    playsInline
-                    muted
-                    ref={this.myVideo}
-                    autoPlay
-                    style={{ width: '300px' }}
-                  />
-                )}
-              </div>
-              <div className='video'>
-                {this.state.callAccepted && !this.state.callEnded ? (
-                  <video
-                    playsInline
-                    ref={userVideo}
-                    autoPlay
-                    style={{ width: '300px' }}
-                  />
-                ) : null}
-              </div>
+  const leaveCall = () => {
+    setCallEnded(true);
+    connectionRef.current.destroy();
+  };
+
+  if (me) {
+    return (
+      <>
+        <div className='container'>
+          <div className='video-container'>
+            <div className='video'>
+              {stream && (
+                <video
+                  playsInline
+                  muted
+                  ref={myVideo}
+                  autoPlay
+                  style={{ width: '400px', margin: '20px' }}
+                />
+              )}
             </div>
-            <div className='myId'>
-              {/* <TextField
+            <div className='video'>
+              {callAccepted && !callEnded ? (
+                <video
+                  playsInline
+                  ref={userVideo}
+                  autoPlay
+                  style={{ width: '400px', margin: '20px' }}
+                />
+              ) : null}
+            </div>
+          </div>
+          <div className='myId'>
+            {/* <TextField
               id='filled-basic'
               label='Name'
               variant='filled'
@@ -153,68 +137,63 @@ class VideoCall extends React.Component {
               onChange={(e) => setName(e.target.value)}
               style={{ marginBottom: '20px' }}
             /> */}
-              <CopyToClipboard
-                text={this.state.me}
-                style={{ marginBottom: '2rem' }}
+            <CopyToClipboard text={me} style={{ marginBottom: '2rem' }}>
+              <Button
+                variant='contained'
+                color='primary'
+                startIcon={<AssignmentIcon fontSize='large' />}
               >
+                Copy ID
+              </Button>
+            </CopyToClipboard>
+
+            <TextField
+              id='filled-basic'
+              label='ID to call'
+              variant='filled'
+              value={idToCall}
+              onChange={(e) => setIdToCall(e.target.value)}
+            />
+            <div className='call-button'>
+              {callAccepted && !callEnded ? (
+                <Button
+                  variant='contained'
+                  color='secondary'
+                  onClick={leaveCall}
+                >
+                  End Call
+                </Button>
+              ) : (
+                <IconButton
+                  color='primary'
+                  aria-label='call'
+                  onClick={() => callUser(idToCall)}
+                >
+                  <PhoneIcon fontSize='large' />
+                </IconButton>
+              )}
+              {idToCall}
+            </div>
+          </div>
+          <div>
+            {receivingCall && !callAccepted ? (
+              <div className='caller'>
+                <h1>{name} is calling...</h1>
                 <Button
                   variant='contained'
                   color='primary'
-                  startIcon={<AssignmentIcon fontSize='large' />}
-                  onClick={() => navigator.clipboard.writeText(this.state.me)}
+                  onClick={answerCall}
                 >
-                  {this.state.me}
+                  Answer
                 </Button>
-              </CopyToClipboard>
-
-              <TextField
-                id='filled-basic'
-                label='ID to call'
-                variant='filled'
-                value={this.state.idToCall}
-                onChange={(e) => this.setState({ idToCall: e.target.value })}
-              />
-              <div className='call-button'>
-                {this.state.callAccepted && !this.state.callEnded ? (
-                  <Button
-                    variant='contained'
-                    color='secondary'
-                    onClick={leaveCall}
-                  >
-                    End Call
-                  </Button>
-                ) : (
-                  <IconButton
-                    color='primary'
-                    aria-label='call'
-                    onClick={() => callUser(this.state.idToCall)}
-                  >
-                    <PhoneIcon fontSize='large' />
-                  </IconButton>
-                )}
-                {this.state.idToCall}
               </div>
-            </div>
-            <div>
-              {this.state.receivingCall && !this.state.callAccepted ? (
-                <div className='caller'>
-                  <h1>{this.state.name} is calling...</h1>
-                  <Button
-                    variant='contained'
-                    color='primary'
-                    onClick={answerCall}
-                  >
-                    Answer
-                  </Button>
-                </div>
-              ) : null}
-            </div>
+            ) : null}
           </div>
-        </>
-      );
-    } else {
-      return <h1>Pls reload or wait for few seconds</h1>;
-    }
+        </div>
+      </>
+    );
+  } else {
+    return <h1>Pls Wait... or reload</h1>;
   }
 }
 
