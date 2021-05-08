@@ -11,6 +11,7 @@ import Login from './Login';
 import Account from './Account';
 import ConsultDoctor from './ConsultDoctor';
 import ConsultForm from './ConsultForm';
+import VideoCall from './VideoCall';
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
             <ConsultForm />
             <Footer />
           </Route>
+          <Route path='/videoCall'>
+            <VideoCall />
+          </Route>
+
           <Route path='/'>
             <HeroSection />
             <MeetSpecialists />
