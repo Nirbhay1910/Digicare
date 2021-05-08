@@ -72,9 +72,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### `Dependencies`
 
 #### @material-ui
-firebase
-WebRTC
-font-awesome
-react
-react-router-dom
-web-vitals
+#### firebase
+#### WebRTC
+#### font-awesome
+#### react
+#### react-router-dom
+#### web-vitals
