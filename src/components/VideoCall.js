@@ -104,6 +104,10 @@ function VideoCall() {
   if (me) {
     return (
       <>
+        <h1 className='video_instruction_heading'>
+          Copy your id and share it with your friend or paste the id given by
+          your friend to the box and click on call button.{' '}
+        </h1>
         <div className='container'>
           <div className='video-container'>
             <div className='video'>

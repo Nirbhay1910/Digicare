@@ -9,7 +9,10 @@
   top: 0;
   box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
 }
-
+.active {
+  padding-bottom: 8px;
+  border-bottom: solid red 3px;
+}
 .logo {
   display: flex;
   justify-content: space-evenly;

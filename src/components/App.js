@@ -30,6 +30,7 @@ function App() {
           <Route path='/myAccount'>
             <Navbar />
             <Account />
+            <Footer />
           </Route>
           <Route path='/consultDoctors/:specialityRequired'>
             <Navbar />

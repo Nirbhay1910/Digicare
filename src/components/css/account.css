@@ -1,70 +1,121 @@
-.Account {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
+.myAccount {
+  display: grid;
+  place-items: center;
+  background-color: #cbd6e5;
+  height: auto;
 }
-
-.cen {
-	text-align: center;
+.Account {
+  overflow: auto;
+  min-height: 94vh;
+  margin: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right__account {
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  flex: 0.75;
+  border-left: solid 2px gray;
 }
 
 .styled-table {
-	border-collapse: collapse;
-	margin: 25px 0;
-	font-size: 0.9em;
-	font-family: sans-serif;
-	min-width: 400px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
-	background-color: #009879;
-	color: #ffffff;
-	text-align: left;
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
 }
 .styled-table th,
 .styled-table td {
-	padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
-	border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-	background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .styled-table tbody tr:last-of-type {
-	border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #009879;
 }
 .styled-table tbody tr.active-row {
-	font-weight: bold;
-	color: #009879;
+  font-weight: bold;
+  color: #009879;
 }
 .medicians {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
 }
 
 .reports {
-	padding: 30px;
-	margin: 30px;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  margin: 30px;
 }
 
 .text {
-	font-size: 40px;
-	padding: 10px;
-	font-weight: 700;
-	text-align: center;
-	align-items: center;
-	border-bottom: 3px solid grey;
-	color: #2575ba;
+  font-size: 40px;
+  padding: 10px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+  align-items: center;
+  border-bottom: 3px solid grey;
+  color: #2575ba;
 }
 
-.disclaimer {
-	color: red;
-	padding: 30px;
+.disclaimer > p {
+  color: red;
+  padding: 30px;
+}
+.report-img {
+  margin-left: 100px;
+}
+.account_options {
+  font-family: sans-serif;
+  font-size: 30px;
+  margin: 0;
+  position: relative;
+  top: -170px;
+  right: 10px;
+}
+.account_options > h1 {
+  cursor: pointer;
+  padding: 20px;
+  margin-left: 0px;
+  color: #2575ba;
+}
+.left__account {
+  margin-right: 30px;
+  flex: 0.1;
+  height: 100%;
+}
+.texterr {
+  width: auto;
+  font-size: 40px;
+  padding: 10px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+  align-items: center;
+  border-bottom: 3px solid grey;
+  color: #2575ba;
+}
+.activa {
+  background-color: #eee;
 }
